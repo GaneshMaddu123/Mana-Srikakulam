@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MANA SRIKAKULAM</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<section class="section">
+    <div class="menu">
+        <div class="mana-heading">Mana Srikakulam</div>
+
+        <div class="menu-buttons">
+            <button *ngFor="let category of categories" (click)="showPlaces(category)">
+                {{ category }}
+            </button>
+        </div>
+    </div>
+    <div class="initial-message" *ngIf="!selectedCategory">
+        <div>
+            <img src="https://m.sakshipost.com/sites/default/files/article_images/2022/04/3/1Srikakulam.jpg" alt="Srikakulam District" class="district-image"/>
+        </div>
+        <div>
+            <p class="caption">Exploring Srikakulam</p>
+        </div>
+    </div>
+    
+    <div class="places-container">
+        <div *ngIf="filteredPlaces.length > 0">
+            <div *ngFor="let place of filteredPlaces" class="place-card">
+                <h2>{{ place.name }}</h2>
+                <img *ngIf="place.imageUrl" [src]="place.imageUrl" class="place-image" alt="{{ place.name }}">
+                
+                <p>{{ place.description }}</p>
+                <p class="add-cap"><strong>Address:</strong> {{ place.address }}</p>
+            </div>
+        </div>
+
+        <p *ngIf="filteredPlaces.length === 0 && selectedCategory" class="no-places">
+            No places found in {{ selectedCategory }}.
+        </p>
+    </div>
+</section>
+
+</body>
+</html>

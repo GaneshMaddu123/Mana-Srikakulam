@@ -1,0 +1,215 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  overflow-x: hidden;
+  text-align: justify;
+}
+
+.initial-message {
+  font-size: 3em;
+  margin-top: 2em;
+  padding-top: 20px;
+  margin-bottom: 0.5em;
+  display: block;
+  transition: opacity 0.5s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.caption{
+  color: green;
+  background-color: rgba(0, 255, 255, 0.2);
+  padding: 0.5em;
+  border-radius: 0.25em;
+}
+
+.mana-heading {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, rgb(232, 58, 220), rgb(7, 3, 226));
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+.menu {
+  margin-left: -0.51em;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: darkslategray;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: fixed; 
+  top: 0; 
+  width: 100%;
+  z-index: 2;
+}
+
+.menu-buttons {
+  display: flex;
+  gap: 12px;
+  margin: 0.5em;
+}
+
+.menu button {
+  background-color: dodgerblue;
+  color: white;
+  border: none;
+  padding: 7px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1em;
+  font-weight: bold;
+  transition: background 0.3s ease-in-out;
+  min-width: 140px;
+}
+
+.menu button:hover {
+  background-color: mediumblue;
+}
+
+.places-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 180%;
+  padding: 50px;
+  margin-left: 3em;
+}
+
+.place-card {
+  background: white;
+  padding: 20px;
+  background-color: rgba(7, 253, 253, 0.01);
+  margin-bottom: 2em;
+  border-radius: 10px;
+  width: 50%;
+  text-align: justify;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.place-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+.place-image {
+  width: 100%;
+  max-height: 500px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+p.no-places {
+  color: crimson;
+  font-weight: bold;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #2c3e50;  
+  text-transform: capitalize;
+  text-align: center;
+  margin: 10px 0;
+  padding: 8px;
+  background: linear-gradient(45deg, #ff6f61, #ffcc00);  
+  border-radius: 8px;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+  font-family: 'Poppins', sans-serif;
+  transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.add-cap{
+  margin-top: 1em;
+}
+
+@media screen and (max-width: 768px) {
+  .menu {
+    padding: 10px;
+    font-size: 0.7em;
+    gap: 5em;
+  }
+
+  .menu-buttons {
+    display: flex;
+    flex-direction: column;
+    width: 10%;
+    padding: 0.1em;
+  }
+
+  .menu button {
+      text-align: center;
+  }
+
+  .place-card {
+      width: 45%;
+      margin-top: 3.5em;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .menu {
+    padding: 10px;
+    font-size: 0.3em;
+    margin-bottom: 0.5em;
+    margin-left: -1em;
+  }
+  .menu-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: -2em;
+    width: 10%;
+    padding: 0.1em;
+  }
+
+  .menu button {
+      text-align: center;
+      margin-left: -15em;
+  }
+
+  .places-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 10px;
+    margin-left: -0.4em;
+  }
+  
+  .place-card {
+    font-size: small;
+    background: white;
+    padding: 10px;
+    background-color: rgba(7, 253, 253, 0.01);
+    margin-bottom: 2em;
+    border-radius: 10px;
+    width: 100%;
+    text-align: justify;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+
+  .place-card:first-child{
+    margin-top: 7em;
+  }
+
+  .place-card h2{
+    font-size: small;
+  }
+}
